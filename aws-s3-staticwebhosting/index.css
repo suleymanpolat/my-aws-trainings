@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 400vh;
+    font-family:'Times New Roman', Times, serif;
+}
+
+nav{
+    padding: 0 50px;
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-one{
+    background-color: rgba(4, 36, 100, 0.988);
+    color: #b89b5e;
+    height: 30px;
+    cursor: pointer;
+    border-bottom: 2px solid black;
+}
+
+.left div + div{
+    margin-left: 20px;
+}
+
+.right div + div + div{
+    margin-right: 30px;
+}
+
+.right > div{
+    margin-left: 20px;
+}
+
+.right > div:hover{
+    color: rgba(4, 36, 100, 0.988);
+    transition: all 0.5s;
+    background-color: #b89b5e;
+}
+
+span{
+    margin-left: 5px;
+}
+
+.navbar-second{
+    background-color: white;
+    height: 100px;
+    position: sticky;
+    top: 0;
+}
+
+.logo{
+    font-size: 24px;
+    cursor: pointer;
+    color: blue;
+}
+
+ul{
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+li{
+    list-style: none;
+    padding: 10px;
+}
+
+
+a{
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 30px;
+    color: rgba(4, 36, 100, 0.988);
+    font-weight: bold;
+}
+
+a:hover{
+    color:#b89b5e ;
+}
+
+
+
+
+
+
+#slider{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+#slider input[type=radio]{
+    display: none;
+}
+
+#slider label{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#slides {
+    padding: 0px;
+    border: 3px solid black;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+#overflow{
+    width: 100%;
+    overflow: hidden;
+}
+
+#slide1:checked ~ #slides .inner{
+    margin-left: 0;
+}
+#slide2:checked ~ #slides .inner{
+    margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner{
+    margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner{
+    margin-left: -300%;
+}
+
+#slides .inner {
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);;
+    width: 400%;
+    line-height: 0;
+    height: 600px;
+    background-color: black;
+}
+
+#slides .slide {
+    width: 25%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+
+}
+
+#slides .slide_1 {
+    background: black;
+    background-image:url(./img/1.jpg);
+    background-size: cover;
+    opacity: 0.6;
+}
+
+#slides .slide_2 {
+    background: #A47E3B;
+    background-image:url(./img/2.jpg);
+    background-size: cover;
+    opacity: 0.6;
+}
+#slides .slide_3 {
+    background: #BF9742;
+    background-image:url(./img/3.jpg);
+    background-size: cover;
+    opacity: 0.6;
+}
+#slides .slide_4 {
+    background: #E6B325;
+    background-image:url(./img/4.jpg);
+    background-size: cover;
+    opacity: 0.6;
+}
+
+.slide-content {
+    padding: 10px;
+    color: white;
+    font-size: 36px;
+}
+
+#controls {
+    margin: -150px 0 0 0;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+    position: relative;
+}
+
+#controls label {
+    transition: opacity 0.2s ease-out;
+    display: none;
+    width: 50px;
+    height: 50px;
+    opacity: .4;
+}
+
+#controls label:hover {
+    opacity: 1;
+}
+
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4) 
+#slide4:checked ~ #controls label:nth-child(1) {
+    background: url(https://www.flaticon.com/free-icon/right-arrow_467282?term=arrow&related_id=467282) no-repeat;
+    float: right;
+    margin: 0 -50px 0 0;
+    display: block;
+}
+
+#slide1:checked ~ #controls label:nth-last-child(2),
+#slide2:checked ~ #controls label:nth-last-child(3),
+#slide3:checked ~ #controls label:nth-last-child(4) 
+#slide4:checked ~ #controls label:nth-last-child(1) {
+    background: url(https://cdn-icons-png.flaticon.com/512/130/130882.png) no-repeat;
+    float: left;
+    margin: 0 0 0 -50px;
+    display: block;
+}
+
+
+#bullets {
+    margin: 100px 0 0;
+    text-align: center;
+
+
+}
+
+#bullets label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #ccc;
+    margin: 0 10px;
+}
+
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+    background: #444;
+
+}
+
+@media screen and (max-width: 900px) {
+    #slide1:checked ~ #controls label:nth-child(2),
+    #slide2:checked ~ #controls label:nth-child(3),
+    #slide3:checked ~ #controls label:nth-child(4) 
+    #slide4:checked ~ #controls label:nth-child(1)
+    #slide1:checked ~ #controls label:nth-last-child(2),
+    #slide2:checked ~ #controls label:nth-last-child(3),
+    #slide3:checked ~ #controls label:nth-last-child(4) 
+    #slide4:checked ~ #controls label:nth-last-child(1) {
+        margin: 0;
+}
+}
