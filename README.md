@@ -1,2 +1,2 @@
-# aws-trainings
+# my-aws-trainings
 In this repo, you will find some trainings of AWS services such as S3-Static Web Hosting, CloudFormation...
